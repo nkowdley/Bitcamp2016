@@ -4,27 +4,18 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 
 /* GET getSong page. */
-router.get('/', function(req, res, next) {
-	console.log("here");
-	// db.collection('songs').findOne({}).sort({$min: 'time'}), {}, function(err, post) {
-	// 	console.log(post);
-	// 	res.send(post);
-	// });
-	
-	db.collection('songs').find({}).toArray(function (err, song) {
+router.get('/', function(req, res, next) {	
+	//Find all the songs currently in the db, sort them oldest to newest
+	db.collection('songs').find({}).sort({created_at : -1}).toArray(function (err, song) {
 		if (err) {
 			console.log("Error: (err)");
 			return next(err);
 		}
-		//console.log(req.url);
-		//console.log(song[0]);
+		//Send the song JSON info
 		res.send(song[0]);
+		//Remove song from the db
 		db.collection('songs').remove(song[0]);
 	});
-
-	// db.songs.findOne({}, function(err, song) {
-	// 	console.log(song);
-	// });
  });
 
 module.exports = router;
