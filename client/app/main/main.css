@@ -25,3 +25,20 @@
 .navbar-text {
   margin-left: 15px;
 }
+
+
+.partyHero {
+    width: 150px;
+    height: 200px;
+    content: assets/images/ThePartyHero.jpg;
+}
+
+.logoHeader {
+    height: 120px;
+    vertical-align: middle;
+    text-align: center; 
+}
+
+.floatLeft { float: left; }
+
+.floatRight { float: right; }
