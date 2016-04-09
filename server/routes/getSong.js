@@ -23,12 +23,12 @@ router.get('/', function(req, res, next) {
 			qs: {q: song, type: 'track', limit: 1} ,
 			method: 'GET' ,
 		}, function(error, response, body){
+			var json = JSON.parse(body);
 			if(json.tracks.total=='0')
 			{
 				res.send("Song Not Found!");
 				res.end();
 			}
-			var json = JSON.parse(body);
 			//Album art: (array of image objects)
 			var albumArt = json.tracks.items[0].album.images[0].url;
 			//Album name
@@ -38,7 +38,7 @@ router.get('/', function(req, res, next) {
 			//Track
 			var trackTitle = json.tracks.items[0].name;
 			//Get Song
-			var mp3 = json.tracks.items[0].preview_url
+			var mp3 = json.tracks.items[0].preview_url;
 			var infoToSend = 'Song Name: ' + trackTitle + ' | Artist: ' + artist + ' | Album: ' + album;
 			var info = {
 				'name' : trackTitle,
