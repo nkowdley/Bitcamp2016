@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 	 	//Track: items.tracks.name
 	 	var trackTitle = json.tracks.items[0].name;
 	 	var infoToSend = 'Song Name: ' + trackTitle + ' | Artist: ' + artist + ' | Album: ' + album;
-		var info: {
+		var info= {
 			'name' = trackTitle,
 			'artist' = artist,
 			'album' = album
