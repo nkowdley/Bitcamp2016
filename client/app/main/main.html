@@ -2,7 +2,7 @@
   <div class="container primary"> 
     <h1>Party Hero!</h1>
     <p class="lead">To play a song, enter the song name and artist:</p>
-<form action="/getSong" method='get'>
+<form id="formid" action="/getSong" method='get'>
 <center><p><input type="text" name="song" placeholder="Song Name?"></p></center>
 
 <center><p><input type="text" name="artist" placeholder="Artist Name?"></p></center>
@@ -28,7 +28,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-  $('form.my_form').submit(function(event) {
+  $('#formid').submit(function(event) {
     event.preventDefault(); // Prevent the form from submitting via the browser
     var form = $(this);
     $.ajax({
