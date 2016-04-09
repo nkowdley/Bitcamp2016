@@ -8,15 +8,19 @@ var db=mongoose.connection;
 router.get('/', function(req, res, next) {
 	//var json = JSON.parse(body);
 	//res.send(req.query[body]);
-	if (!req.query["song"])
+	if (!req.query["song"] && !req.query["body"])
 	{
 		res.send("Song Not Specified!");
 		res.end();
 	}
 	else {
 		//Split the song string
+		if (req.query["song"])
 		var song = req.query["song"].split(' ').join('+');
-
+		else {
+			var song = req.query["body"].split(' ').join('+');
+		}
+		console.log(song);
 
 		request({
 			url: 'https://api.spotify.com/v1/search' ,
@@ -49,6 +53,7 @@ router.get('/', function(req, res, next) {
 					'mp3' : mp3
 				};
 				//Add the song to the db.
+				console.log(info);
 				db.collection('songs').insert(info);
 				res.send("Song Added");
 			}
