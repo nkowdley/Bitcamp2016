@@ -11,7 +11,7 @@ import config from './config/environment';
 import http from 'http';
 
 //mongo connection, set the connection to a variable, db
-mongoose.connect('mongodb://localhost/database', function(err) {
+mongoose.connect('mongodb://localhost/bitcamp2016', function(err) {
   if(err) {
     console.log('MONGO CONNECTION ERROR', err);
   } else {
