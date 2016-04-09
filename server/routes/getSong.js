@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-
+var mongoose = require('mongoose');
+var db=mongoose.connection;
 
 /* GET getSong page. */
 router.get('/', function(req, res, next) {
@@ -28,7 +29,14 @@ router.get('/', function(req, res, next) {
 	 	//Track: items.tracks.name
 	 	var trackTitle = json.tracks.items[0].name;
 	 	var infoToSend = 'Song Name: ' + trackTitle + ' | Artist: ' + artist + ' | Album: ' + album;
-	 	res.send(infoToSend);
+		var info: {
+			'name' = trackTitle,
+			'artist' = artist,
+			'album' = album
+		};
+		//Add the song to the db.
+		db.collection('songs').insert(info);
+	 	res.send(info);
 	 })
 
 	//res.send("Hello World"+);
