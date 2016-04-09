@@ -1,10 +1,13 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var router = express.Router();
+var db=mongoose.connection;
 
-/* GET getSong page. */
+/*Test page in order to verify mongodb connection*/
 router.get('/', function(req, res, next) {
-  res.send(req.query.toString());
-  //res.sendfile('../client/app/index.html');
+	//Split the song string
+	var song = req.query["song"].split(' ').join('+');
+	db.collection('songs').insert(song);
+	res.send(song);
 });
-
 module.exports = router;
