@@ -18,8 +18,6 @@ router.get('/', function(req, res, next) {
 	 	method: 'GET' ,
 	 }, function(error, response, body){
 	 	var json = JSON.parse(body);
-	 	// rec.send(json);
-	 	
 	 	//Album art: items.album.images (array of image objects)
 	 	var albumArt = json.tracks.items[0].album.images[0].url;
 	 	//Album name: items.album.name
