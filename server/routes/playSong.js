@@ -6,11 +6,15 @@ var db=mongoose.connection;
 /* GET getSong page. */
 router.get('/', function(req, res, next) {
 
-	 db.findOneandRemove({}, {}, { sort: { 'created at' : -1} }, function(err, post) {
-	 	res.send(Removed);
-	 })
+	
+	db.collection('songs').findOneandRemove({}, {}, { sort: { 'created_at' : 1} }, function(err, post) {
+		res.send(post);
+	}
+	
+	
+
 	//res.send("Hello World"+);
  	//res.sendfile('../client/app/index.html');
  });
 
-module.exports = router;
+	module.exports = router;
