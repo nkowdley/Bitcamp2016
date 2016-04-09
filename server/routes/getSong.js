@@ -8,7 +8,7 @@ var db=mongoose.connection;
 router.get('/', function(req, res, next) {
 	//var json = JSON.parse(body);
 	//res.send(req.query[body]);
-	if (!req.query["song"] && !req.query["body"])
+	if (!req.query["song"] && !req.query["Body"])
 	{
 		console.log("bad");
 		res.send("Song Not Specified!");
@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 		if (req.query["song"])
 		var song = req.query["song"].split(' ').join('+');
 		else {
-			var song = req.query["body"].split(' ').join('+');
+			var song = req.query["Body"].split(' ').join('+');
 		}
 		console.log(song);
 
