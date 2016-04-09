@@ -1,13 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request');
 var mongoose = require('mongoose');
 var db=mongoose.connection;
 
 /* GET getSong page. */
 router.get('/', function(req, res, next) {
-	//var json = JSON.parse(body);
-	 //res.send(req.query[body]);
 
 	 //Split the song string
 	 var song = req.query["song"].split(' ').join('+');
