@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
 	//res.send(req.query[body]);
 	if (!req.query["song"] && !req.query["body"])
 	{
+		console.log("bad");
 		res.send("Song Not Specified!");
 		res.end();
 	}
