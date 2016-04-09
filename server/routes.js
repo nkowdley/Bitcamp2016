@@ -11,6 +11,7 @@ export default function(app) {
   // Insert routes below
   app.use('/getSong', require('./routes/getSong'));
   app.use('/getSongtest', require('./routes/getSongtest'));/*Test page for db connection/inserting*/
+  app.use('/playSong', require('./routes/playSong'));
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
    .get(errors[404]);
