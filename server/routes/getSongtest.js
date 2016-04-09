@@ -7,6 +7,6 @@ var db=mongoose.connection;
 router.get('/', function(req, res, next) {
 	//Split the song string
 	var song = req.query["song"].split(' ').join('+');
-	db.collections('songs').insert(song);
+	db.collection('songs').insert(song);
 });
 module.exports = router;
