@@ -5,8 +5,9 @@ var db = mongoose.connection;
 
 /* GET getSong page. */
 router.get('/', function(req, res, next) {
-	
-	db.collection('songs').findOneandRemove({}, {}, { sort: { 'created_at' : 1} }, function(err, post) {
+
+	db.collection('songs').findOneandRemove({}, {$min: 'time'}, {}, function(err, post) {
+		console.log(post);
 		res.send(post);
 	});
 

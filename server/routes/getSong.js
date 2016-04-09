@@ -51,6 +51,7 @@ router.get('/', function(req, res, next) {
 					'artist' : artist,
 					'album' : album,
 					'art' : albumArt,
+					'time' : (new Date).getTime();
 					'mp3' : mp3
 				};
 				//Add the song to the db.
@@ -60,8 +61,6 @@ router.get('/', function(req, res, next) {
 			}
 		})
 
-		//res.send("Hello World"+);
-		//res.sendfile('../client/app/index.html');
 	}
 });
 
