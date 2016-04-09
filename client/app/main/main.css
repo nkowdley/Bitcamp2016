@@ -30,7 +30,7 @@
 .partyHero {
     width: 150px;
     height: 200px;
-    content: assets/images/ThePartyHero.jpg;
+    content: "assets/images/ThePartyHero.jpg";
 }
 
 .logoHeader {
