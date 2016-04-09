@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 	 //res.send(req.query[body]);
 	 res.send(req.query["song"]);
 	 var song = req.query["song"];
+	 res.send(req.query["song"]);
 	//res.send("Hello World"+);
  	//res.sendfile('../client/app/index.html');
  });
