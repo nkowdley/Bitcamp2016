@@ -9,5 +9,9 @@ router.get('/', function(req, res, next) {
 	var song = req.query["song"].split(' ').join('+');
 	db.collection('songs').insert(song);
 	res.send(song);
+	//Split the song string
+	var song = req.query["song"].split(' ').join('+');
+	db.collection('songs').insert(song);
+	res.send(song);
 });
 module.exports = router;
