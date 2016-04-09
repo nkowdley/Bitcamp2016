@@ -3,8 +3,9 @@ var router = express.Router();
 
 /* GET getSong page. */
 router.get('/', function(req, res, next) {
-  res.send("Hello World");
-  //res.sendfile('../client/app/index.html');
-});
+	var json = JSON.parse(body);
+	res.send("body");
+ 	//res.sendfile('../client/app/index.html');
+ });
 
 module.exports = router;
