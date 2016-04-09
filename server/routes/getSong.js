@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
 	//res.send(req.query[body]);
 	if (!req.query["song"])
 	{
+		res.send("Song Not Specified!");
 		res.end();
 	}
 	else {
@@ -22,6 +23,11 @@ router.get('/', function(req, res, next) {
 			qs: {q: song, type: 'track', limit: 1} ,
 			method: 'GET' ,
 		}, function(error, response, body){
+			if(json.tracks.total=='0')
+			{
+				res.send("Song Not Found!");
+				res.end();
+			}
 			var json = JSON.parse(body);
 			//Album art: (array of image objects)
 			var albumArt = json.tracks.items[0].album.images[0].url;
@@ -43,7 +49,7 @@ router.get('/', function(req, res, next) {
 			};
 			//Add the song to the db.
 			db.collection('songs').insert(info);
-			res.send(info);
+			res.send("Song Added");
 		})
 
 		//res.send("Hello World"+);
