@@ -30,14 +30,20 @@
 
 
 .partyHero {
-    width: 250px;
-    height: 350px;
-    content: "assets/images/ThePartyHero.jpg";
+  width: 250px;
+  height: 350px;
+  content: "assets/images/ThePartyHero.jpg";
 }
 
 .logoHeader {
-    vertical-align: middle;
-    text-align: center; 
+  vertical-align: middle;
+  text-align: center; 
+}
+
+input {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .floatLeft { float: left; }
