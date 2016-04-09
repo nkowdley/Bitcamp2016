@@ -31,11 +31,15 @@ router.get('/', function(req, res, next) {
 			var artist = json.tracks.items[0].artists[0].name;
 			//Track
 			var trackTitle = json.tracks.items[0].name;
+			//Get Song
+			var mp3 = json.tracks.items[0].preview_url
 			var infoToSend = 'Song Name: ' + trackTitle + ' | Artist: ' + artist + ' | Album: ' + album;
 			var info = {
 				'name' : trackTitle,
 				'artist' : artist,
-				'album' : album
+				'album' : album,
+				'art' : albumArt,
+				'mp3' : mp3
 			};
 			//Add the song to the db.
 			db.collection('songs').insert(info);
