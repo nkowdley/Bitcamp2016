@@ -51,7 +51,7 @@ router.get('/', function(req, res, next) {
 					'artist' : artist,
 					'album' : album,
 					'art' : albumArt,
-					'time' : (new Date).getTime();
+					'time' : (new Date).getTime(),
 					'mp3' : mp3
 				};
 				//Add the song to the db.
