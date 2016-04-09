@@ -11,6 +11,9 @@ router.get('/', function(req, res, next) {
 			console.log("Error: (err)");
 			return next(err);
 		}
+		//Parse the JSON of the song
+		var songJSON = JSON.parse(song[0]);
+
 		//Send the song JSON info
 		res.send(song[0]);
 		//Remove song from the db
