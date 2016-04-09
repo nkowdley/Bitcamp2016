@@ -19,14 +19,13 @@ router.get('/', function(req, res, next) {
 	 	method: 'GET' ,
 	 }, function(error, response, body){
 	 	var json = JSON.parse(body);
-	 	//Album art: items.album.images (array of image objects)
+	 	//Album art: (array of image objects)
 	 	var albumArt = json.tracks.items[0].album.images[0].url;
-	 	//Album name: items.album.name
+	 	//Album name
 	 	var album = json.tracks.items[0].album.name;
-	 	//Artist: items.artists.name
+	 	//Artist
 	 	var artist = json.tracks.items[0].artists[0].name;
-	 	// res.send(artist);
-	 	//Track: items.tracks.name
+	 	//Track
 	 	var trackTitle = json.tracks.items[0].name;
 	 	var infoToSend = 'Song Name: ' + trackTitle + ' | Artist: ' + artist + ' | Album: ' + album;
 		var info = {
