@@ -16,10 +16,10 @@
 .hero-unit {
   position: relative;
   padding: 30px 15px;
-  color: #2E8B57;
+  color: #F5F5F5;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+  background: #F5F5F5;
 }
 
 .navbar-text {
