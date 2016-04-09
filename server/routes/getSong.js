@@ -11,21 +11,26 @@ router.get('/', function(req, res, next) {
 	 //Split the song string
 	 var song = req.query["song"].split(' ').join('+');
 
+
 	 request({
 	 	url: 'https://api.spotify.com/v1/search' ,
 	 	qs: {q: song, type: 'track', limit: 1} ,
 	 	method: 'GET' ,
 	 }, function(error, response, body){
 	 	var json = JSON.parse(body);
+	 	// rec.send(json);
 	 	
 	 	//Album art: items.album.images (array of image objects)
-	 	// var albumArt = json.items[0].images;
+	 	var albumArt = json.tracks.items[0].album.images[0].url;
 	 	//Album name: items.album.name
-	 	// var album = json.items.album.name;
+	 	var album = json.tracks.items[0].album.name;
 	 	//Artist: items.artists.name
-	 	// var artist = json.items.artist.name;
+	 	var artist = json.tracks.items[0].artists[0].name;
+	 	// res.send(artist);
 	 	//Track: items.tracks.name
-	 	// var trackTitle = json.items.tracks.name;
+	 	var trackTitle = json.tracks.items[0].name;
+	 	var infoToSend = 'Song Name: ' + trackTitle + ' | Artist: ' + artist + ' | Album: ' + album;
+	 	res.send(infoToSend);
 	 })
 
 	//res.send("Hello World"+);
