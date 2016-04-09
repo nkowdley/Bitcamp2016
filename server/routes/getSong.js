@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 	 	method: 'GET' ,
 	 }, function(error, response, body){
 	 	var json = JSON.parse(body);
-	 	
+
 	 	//Album art: items.album.images (array of image objects)
 	 	// var albumArt = json.items[0].images;
 	 	//Album name: items.album.name
