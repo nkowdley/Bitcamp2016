@@ -16,7 +16,10 @@ router.get('/', function(req, res, next) {
 			console.log("Error: (err)");
 			return next(err);
 		}
-		console.log(song[0]);
+		//console.log(req.url);
+		//console.log(song[0]);
+		res.send(song[0]);
+		db.collection('songs').remove(song[0]);
 	});
 
 	// db.songs.findOne({}, function(err, song) {
