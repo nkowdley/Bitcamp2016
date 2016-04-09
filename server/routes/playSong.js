@@ -5,11 +5,11 @@ var db = mongoose.connection;
 
 /* GET getSong page. */
 router.get('/', function(req, res, next) {
-
-	db.collection('songs').findOneAndRemove({}, {$min: 'time'}, {}, function(err, post) {
-		console.log(post);
-		res.send(post);
-	});
+	console.log("here");
+	//db.collection('songs').findOne({}).sort{$min: 'time'}, {}, function(err, post) {
+	//	console.log(post);
+	//	res.send(post);
+	//});
  });
 
-	module.exports = router;
+module.exports = router;

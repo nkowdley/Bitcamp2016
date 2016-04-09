@@ -6,8 +6,6 @@ var db=mongoose.connection;
 
 /* GET getSong page. */
 router.get('/', function(req, res, next) {
-	//var json = JSON.parse(body);
-	//res.send(req.query[body]);
 	if (!req.query["song"] && !req.query["Body"])
 	{
 		console.log("bad");
@@ -17,7 +15,7 @@ router.get('/', function(req, res, next) {
 	else {
 		//Split the song string
 		if (req.query["song"])
-		var song = req.query["song"].split(' ').join('+');
+			var song = req.query["song"].split(' ').join('+');
 		else {
 			var song = req.query["Body"].split(' ').join('+');
 		}
