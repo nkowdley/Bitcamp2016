@@ -16,7 +16,16 @@ router.get('/', function(req, res, next) {
 	 	qs: {q: song, type: 'track', limit: 1} ,
 	 	method: 'GET' ,
 	 }, function(error, response, body){
-	 	res.send(body);
+	 	var json = JSON.parse(body);
+	 	
+	 	//Album art: items.album.images (array of image objects)
+	 	var albumArt = json.items.album.images;
+	 	//Album name: items.album.name
+	 	var album = json.items.album.name;
+	 	//Artist: items.artists.name
+	 	var artist = json.items.artist.name;
+	 	//Track: items.tracks.name
+	 	var trackTitle = json.items.tracks.name;
 	 })
 
 	//res.send("Hello World"+);
