@@ -34,7 +34,7 @@ router.get('/', function(req, res, next) {
 			}
 			else {
 				//Album art: (array of image objects)
-				var albumArt = json.tracks.items[0].album.images[0].url;
+				var albumArt = json.tracks.items[0].album.images[1].url;
 				//Album name
 				var album = json.tracks.items[0].album.name;
 				//Artist
