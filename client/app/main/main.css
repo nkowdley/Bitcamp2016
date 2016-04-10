@@ -24,14 +24,10 @@
   background: #2E8B57;
 }
 
-.navbar-text {
-  margin-left: 15px;
-}
-
 
 .partyHero {
-  width: 250px;
-  height: 350px;
+  width: 200px;
+  height: 225px;
   content: "assets/images/ThePartyHero.jpg";
 }
 
