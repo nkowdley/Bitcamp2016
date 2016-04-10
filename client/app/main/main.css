@@ -40,6 +40,15 @@
   text-align: center; 
 }
 
+.Song-Info {
+  float: left;
+}
+
+.Song-Info span {
+  margin-left: 10px;
+  display: inline-block;
+}
+
 input {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
