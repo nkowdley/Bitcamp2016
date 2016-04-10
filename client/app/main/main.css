@@ -46,6 +46,12 @@ input {
   border-radius: 5px;
 }
 
+button {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
 .floatLeft { float: left; }
 
 .floatRight { float: right; }
