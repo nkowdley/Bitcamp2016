@@ -75,9 +75,10 @@ function getNextSong() {
     console.log(data);
     $("#song_src").attr('src',data.mp3);
     $("#album-art").attr('src',data.art);
-    $("#track").innerHTML("Track: ", data.name);
-    $("#album").innerHTML("Album: ", data.album);
-    $("#artist").innerHTML("Artist: ", data.artist);
+	console.log(data.name);
+    document.getElementById("track").innerHTML="Track: " + data.name;
+    $("#album").innerHTML="Album: "+ data.album;
+    $("#artist").innerHTML="Artist: "+ data.artist;
     $('#song').get(0).pause();
 	 $('#song').get(0).load();//suspends and restores all audio element
 	 $('#song').get(0).play();
