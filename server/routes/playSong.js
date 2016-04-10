@@ -6,7 +6,7 @@ var db = mongoose.connection;
 /* GET getSong page. */
 router.get('/', function(req, res, next) {
 	//Find all the songs currently in the db, sort them oldest to newest
-	db.collection('songs').find({}).sort({"time" : -1}).toArray(function (err, song) {
+	db.collection('songs').find({}).sort({"time" : 1}).toArray(function (err, song) {
 		if (err) {
 			console.log("Error: (err)");
 			res.send(err);
