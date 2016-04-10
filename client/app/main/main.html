@@ -25,11 +25,14 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="page-header">Current Song:</h1>
-        <h2 class="Song-Info">
+        <div class="album-art">
           <img id="album-art" src="assets/images/handtinyblack.gif" />
-          <span>Artist: </span>
-          <span>Track: </span>
-          <span>Album: </span>
+        </div>
+        <div class="Song-Info">
+          <div>Artist: </div>
+          <div>Track: </div>
+          <div>Album: </div>
+        </div>
         </br>
       </br>
       <audio id="song" controls autoplay="true">
@@ -37,7 +40,7 @@
          Your browser does not support the audio element.
        </audio>
        
-     </h2>
+     </div>
      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
        <!-- <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>-->
 
