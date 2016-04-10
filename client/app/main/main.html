@@ -61,6 +61,7 @@ $(document).ready(function(){
       data: form.serialize()
     }).done(function(data) {
       console.log(data);
+      $(":input[type=text]").val("");
     }).fail(function(data) {
       // Optionally alert the user of an error here...
     });
