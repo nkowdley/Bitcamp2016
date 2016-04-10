@@ -43,6 +43,7 @@
 
 .Song-Info {
   display: inline-block;
+  font-style: bold;
 }
 
 #input-box {
