@@ -76,6 +76,7 @@
   }).done(function(data) {
     console.log("Album " + data.album);
     if (data.album != null) {
+
       $("#song_src").attr('src',data.mp3);
       $("#album-art").attr('src',data.art);
       document.getElementById("album").innerHTML="Album: " + data.album;
@@ -85,7 +86,6 @@
       $('#song').get(0).load();//suspends and restores all audio element
       $('#song').get(0).play();
     }
-
 
 
   }).fail(function(data) {
