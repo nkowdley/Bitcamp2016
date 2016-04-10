@@ -29,6 +29,7 @@
 		   <source id="song_src" src="https://p.scdn.co/mp3-preview/8c72d825c13c32ca690fc28d379db91a41092e7a" type="audio/mpeg">
 		   Your browser does not support the audio element.
 	   </audio>
+	   <img src="" />
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
        <!-- <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>-->
 
@@ -52,7 +53,7 @@ $(document).ready(function(){
     });
   });
  });
-
+getNextSong();
 setInterval(getNextSong, 32000);
 function getNextSong() {
  	//console.log("we did it!");
@@ -62,9 +63,11 @@ function getNextSong() {
     }).done(function(data) {
       console.log(data);
 	 $("#song_src").attr('src',data.mp3);
+	 $("#img_src").attr('src',data.art);
 	 $('#song').get(0).pause();
 	 $('#song').get(0).load();//suspends and restores all audio element
 	 $('#song').get(0).play();
+
 
     }).fail(function(data) {
       // Optionally alert the user of an error here...
