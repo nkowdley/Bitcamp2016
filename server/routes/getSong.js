@@ -3,9 +3,9 @@ var router = express.Router();
 var request = require('request');
 var mongoose = require('mongoose');
 
-var accountSid = 'ACadbf6e101408ffbc1c22481542ca1f5a';
-var authToken = '55e7a5b6e63fdad33b5b146dbceace84';
-var client = require("twilio")(accountSid, authToken);
+// var accountSid = 'ACadbf6e101408ffbc1c22481542ca1f5a';
+// var authToken = '55e7a5b6e63fdad33b5b146dbceace84';
+// var client = require("twilio")(accountSid, authToken);
 
 var db=mongoose.connection;
 
