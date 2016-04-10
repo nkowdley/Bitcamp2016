@@ -26,32 +26,30 @@
       <div class="col-lg-12">
         <h1 class="page-header">Current Song:</h1>
         <h2 class="Song-Info">
-          <img id="album-art" src="assets/images/handtinyblack.gif" height = "250" width = "250"/>
-        <div class="album-art">
-          <img id="album-art" src="assets/images/handtinyblack.gif" />
-        </div>
-        <div class="Song-Info">
-          <h2 id="artist">Artist: </h2>
-          <h2 id="track">Track: </h2>
-          <h2 id="album">Album: </h2>
-        </div>
-      </br>
-    </br>
-    <audio id="song" controls autoplay="true">
-     <source id="song_src" src="https://p.scdn.co/mp3-preview/8c72d825c13c32ca690fc28d379db91a41092e7a" type="audio/mpeg">
-       Your browser does not support the audio element.
-     </audio>
+          <div class="album-art">
+            <img id="album-art" src="assets/images/handtinyblack.gif" height = "250" width = "250"/>          </div>
+            <div class="Song-Info">
+              <h2 id="artist">Artist: </h2>
+              <h2 id="track">Track: </h2>
+              <h2 id="album">Album: </h2>
+            </div>
+          </br>
+        </br>
+        <audio id="song" controls autoplay="true">
+         <source id="song_src" src="https://p.scdn.co/mp3-preview/8c72d825c13c32ca690fc28d379db91a41092e7a" type="audio/mpeg">
+           Your browser does not support the audio element.
+         </audio>
 
+       </div>
+       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
+         <!-- <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>-->
+
+       </ul>
+     </div>
    </div>
-   <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
-     <!-- <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>-->
-
-   </ul>
  </div>
-</div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){
+ <script type="text/javascript">
+ $(document).ready(function(){
   $('#formid').submit(function(event) {
     event.preventDefault(); // Prevent the form from submitting via the browser
     var form = $(this);
@@ -61,29 +59,33 @@ $(document).ready(function(){
       data: form.serialize()
     }).done(function(data) {
       console.log(data);
+      //Clears the two input boxes for the song and artists after the submit button is clicked
       $(":input[type=text]").val("");
     }).fail(function(data) {
       // Optionally alert the user of an error here...
     });
   });
 });
-getNextSong();
-setInterval(getNextSong, 32000);
-function getNextSong() {
+ getNextSong();
+ setInterval(getNextSong, 32000);
+ function getNextSong() {
  	//console.log("we did it!");
    $.ajax({
     type: "get",
     url: "/playSong"
   }).done(function(data) {
-    console.log(data);
-    $("#song_src").attr('src',data.mp3);
-    $("#album-art").attr('src',data.art);
-    document.getElementById("album").innerHTML="Album: " + data.album;
-    document.getElementById("track").innerHTML="Track: " + data.name;
-    document.getElementById("artist").innerHTML="Artist: " + data.artist;
-    $('#song').get(0).pause();
-	 $('#song').get(0).load();//suspends and restores all audio element
-	 $('#song').get(0).play();
+    console.log("Album " + data.album);
+    if (data.album != null) {
+      $("#song_src").attr('src',data.mp3);
+      $("#album-art").attr('src',data.art);
+      document.getElementById("album").innerHTML="Album: " + data.album;
+      document.getElementById("track").innerHTML="Track: " + data.name;
+      document.getElementById("artist").innerHTML="Artist: " + data.artist;
+      $('#song').get(0).pause();
+      $('#song').get(0).load();//suspends and restores all audio element
+      $('#song').get(0).play();
+    }
+
 
 
   }).fail(function(data) {
