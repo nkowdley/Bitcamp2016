@@ -40,12 +40,12 @@
   text-align: center; 
 }
 
-.Song-Info {
-  float: left;
+.album-art {
+  display: inline-block;
+  vertical-align: top;
 }
 
-.Song-Info span {
-  margin-left: 10px;
+.Song-Info {
   display: inline-block;
 }
 
