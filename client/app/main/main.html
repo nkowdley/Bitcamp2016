@@ -9,7 +9,8 @@
           <form id="formid" action="/getSong" method='get'>
             <p class="lead">To play a song, enter the song name and artist:</p>
             <center><p><input type="text" id="input-box" name="song" placeholder="Song Name?"></p></center>
-            <center><input type="submit" style="color:white;background-color:black" value="Add to queue!"></center>
+              <input type="submit" style="color:white;background-color:black" value="Add to queue!"></input>
+              <button onclick="getNextSong()" style="color:white;background-color:black">Play Next</button>
           </form>
         </h3>
       </h1>
@@ -22,6 +23,7 @@
     <div class="row">
       <div class="col-lg-12">
         <h2 class="page-header" font-style: "bold" >Current Song:</h2>
+        <center>
         <h2 class="Song-Info">
           <div class="album-art">
             <img id="album-art" src="assets/images/handtinyblack.gif" height = "250" width = "250"/>          </div>
@@ -42,6 +44,7 @@
          <!-- <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>-->
 
        </ul>
+     </center>
      </div>
    </div>
  </div>
