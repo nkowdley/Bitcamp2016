@@ -1,11 +1,11 @@
-.thing-form {
+/*.thing-form {
   margin: 20px 0;
 }
 
 #banner {
   border-bottom: none;
   margin-top: -20px;
-}
+}*/
 
 #banner h1 {
   font-size: 60px;
@@ -17,7 +17,7 @@
   position: relative;
   padding: 30px 15px;
   color: #000000;
-  font-family: "Georgia", serif;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-variant: small-caps;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
