@@ -29,24 +29,24 @@
           <img id="album-art" src="assets/images/handtinyblack.gif" />
         </div>
         <div class="Song-Info">
-          <h2>Artist: </h2>
-          <h2>Track: </h2>
-          <h2>Album: </h2>
+          <h2 id="artist">Artist: </h2>
+          <h2 id="track">Track: </h2>
+          <h2 id="album">Album: </h2>
         </div>
-        </br>
       </br>
-      <audio id="song" controls autoplay="true">
-       <source id="song_src" src="https://p.scdn.co/mp3-preview/8c72d825c13c32ca690fc28d379db91a41092e7a" type="audio/mpeg">
-         Your browser does not support the audio element.
-       </audio>
-       
-     </div>
-     <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
-       <!-- <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>-->
+    </br>
+    <audio id="song" controls autoplay="true">
+     <source id="song_src" src="https://p.scdn.co/mp3-preview/8c72d825c13c32ca690fc28d379db91a41092e7a" type="audio/mpeg">
+       Your browser does not support the audio element.
+     </audio>
 
-     </ul>
    </div>
+   <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
+     <!-- <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>-->
+
+   </ul>
  </div>
+</div>
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -75,7 +75,9 @@ function getNextSong() {
     console.log(data);
     $("#song_src").attr('src',data.mp3);
     $("#album-art").attr('src',data.art);
-    console.log(data.art);
+    $("#track").innerHTML("Track: ", data.name);
+    $("#album").innerHTML("Album: ", data.album);
+    $("#artist").innerHTML("Artist: ", data.artist);
     $('#song').get(0).pause();
 	 $('#song').get(0).load();//suspends and restores all audio element
 	 $('#song').get(0).play();
