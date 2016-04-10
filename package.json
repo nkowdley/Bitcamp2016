@@ -20,7 +20,8 @@
     "mongoose": "^4.1.2",
     "bluebird": "^3.3.3",
     "connect-mongo": "^0.8.1",
-    "serve-favicon": "^2.3.0"
+    "serve-favicon": "^2.3.0",
+    "twilio": "^2.91"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",
@@ -92,7 +93,7 @@
     "phantomjs-prebuilt": "^2.1.4",
     "proxyquire": "^1.0.1",
     "supertest": "^1.1.0",
-    "require": "^2.70.0"
+    "require": "^2.70.0"    
   },
   "engines": {
     "node": "^4.4.0",
