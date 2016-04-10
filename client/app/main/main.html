@@ -36,7 +36,7 @@
           </br>
         </br>
         <audio id="song" controls autoplay="true">
-         <source id="song_src" src="https://p.scdn.co/mp3-preview/8c72d825c13c32ca690fc28d379db91a41092e7a" type="audio/mpeg">
+         <source id="song_src" src="" type="audio/mpeg">
            Your browser does not support the audio element.
          </audio>
 		 
@@ -67,7 +67,7 @@
   });
 });
  getNextSong();
- setInterval(getNextSong, 32000);
+ setInterval(getNextSong, 3000);
  function getNextSong() {
  	//console.log("we did it!");
    $.ajax({
